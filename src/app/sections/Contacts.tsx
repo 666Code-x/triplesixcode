@@ -64,7 +64,7 @@ export default function Contacts() {
               whileHover={{ y: -5 }}
               className="p-6 py-28 bg-666-gray/30 rounded-xl border border-666-red/10 text-center glow-card min-h-[180px] flex flex-col justify-center items-center"
             >
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
+              <div className="text-5xl md:text-6xl font-bold gradient-text mb-3">
                 {hasAnimated ? (
                   <CountUp
                     end={stat.value}
@@ -75,7 +75,7 @@ export default function Contacts() {
                   `0${stat.suffix}`
                 )}
               </div>
-              <div className="text-sm text-gray-400">{stat.label}</div>
+              <div className="text-lg text-gray-400">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
