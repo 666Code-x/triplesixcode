@@ -2,14 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Mail, Send, Github, MapPin, Clock } from 'lucide-react'
+import { Send, Github, MapPin, Clock, MessageSquare, Loader2, CheckCircle } from 'lucide-react'
 import CountUp from 'react-countup'
-
-const contacts = [
-  { icon: Mail, label: 'Email', value: 'code@666code.com', href: 'mailto:code@666code.com' },
-  { icon: Send, label: 'Telegram', value: '@triplesixontheblock', href: 'https://t.me/triplesixontheblock' },
-  { icon: Github, label: 'GitHub', value: 'github.com/666Code-x', href: 'https://github.com/666Code-x' },
-]
 
 const stats = [
   { value: 200, suffix: '+', label: 'Проектов' },
@@ -22,6 +16,43 @@ export default function Contacts() {
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
   const [hasAnimated, setHasAnimated] = useState(false)
+
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Ошибка отправки')
+      }
+
+      setIsSubmitted(true)
+      setFormData({ name: '', email: '', message: '' })
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Ошибка отправки')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -80,25 +111,142 @@ export default function Contacts() {
           ))}
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
-          {contacts.map((contact, index) => (
-            <motion.a
-              key={contact.label}
-              href={contact.href}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl mx-auto mb-16"
+        >
+          {isSubmitted ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="p-8 bg-666-gray/30 rounded-xl border border-666-red/20 text-center glow-card"
+            >
+              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Сообщение отправлено!</h3>
+              <p className="text-gray-400 mb-6">
+                Спасибо за обращение. Я свяжусь с вами в ближайшее время.
+              </p>
+              <button
+                onClick={() => setIsSubmitted(false)}
+                className="px-6 py-2 bg-666-red/20 hover:bg-666-red/30 text-666-red rounded-lg transition-colors"
+              >
+                Отправить ещё
+              </button>
+            </motion.div>
+          ) : (
+            <motion.form
+              onSubmit={handleSubmit}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="group p-8 bg-666-gray/30 rounded-xl border border-666-red/10 hover:border-666-red/30 transition-all glow-card text-center"
+              className="p-8 bg-666-gray/30 rounded-xl border border-666-red/20 glow-card"
             >
-              <contact.icon className="w-10 h-10 text-666-red mb-4 group-hover:scale-110 transition-transform mx-auto" />
-              <div className="text-sm text-gray-500 mb-2">{contact.label}</div>
-              <div className="font-semibold text-white group-hover:text-666-red transition-colors text-lg">
-                {contact.value}
+              <h3 className="text-2xl font-bold mb-6 text-center">
+                Отправить <span className="gradient-text">сообщение</span>
+              </h3>
+
+              <div className="space-y-4 mb-6">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Ваше имя"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-3 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Ваш email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Ваше сообщение..."
+                    required
+                    rows={5}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors resize-none"
+                  />
+                </div>
               </div>
-            </motion.a>
-          ))}
+
+              {error && (
+                <div className="mb-4 p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm text-center">
+                  {error}
+                </div>
+              )}
+
+              <div className="flex gap-4">
+                <motion.button
+                  type="submit"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="flex-1 py-3 bg-666-red hover:bg-666-red/90 text-white font-semibold rounded-lg glow-red flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Отправка...
+                    </>
+                  ) : (
+                    <>
+                      <MessageSquare className="w-5 h-5" />
+                      Отправить
+                    </>
+                  )}
+                </motion.button>
+              </div>
+            </motion.form>
+          )}
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
+          <motion.a
+            href="https://t.me/triplesixontheblock"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            whileHover={{ y: -5, scale: 1.02 }}
+            className="group p-6 bg-666-gray/30 rounded-xl border border-666-red/10 hover:border-666-red/30 transition-all glow-card text-center flex items-center justify-center gap-4"
+          >
+            <Send className="w-8 h-8 text-666-red group-hover:scale-110 transition-transform" />
+            <div className="text-left">
+              <div className="text-sm text-gray-500">Telegram</div>
+              <div className="font-semibold text-white group-hover:text-666-red transition-colors text-lg">
+                @triplesixontheblock
+              </div>
+            </div>
+          </motion.a>
+
+          <motion.a
+            href="https://github.com/666Code-x"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            whileHover={{ y: -5, scale: 1.02 }}
+            className="group p-6 bg-666-gray/30 rounded-xl border border-666-red/10 hover:border-666-red/30 transition-all glow-card text-center flex items-center justify-center gap-4"
+          >
+            <Github className="w-8 h-8 text-666-red group-hover:scale-110 transition-transform" />
+            <div className="text-left">
+              <div className="text-sm text-gray-500">GitHub</div>
+              <div className="font-semibold text-white group-hover:text-666-red transition-colors text-lg">
+                666Code-x
+              </div>
+            </div>
+          </motion.a>
         </div>
 
         <motion.footer
