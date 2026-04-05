@@ -64,7 +64,36 @@ export default function OrderForm() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      // Отправляем email уведомление
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: `Новая заявка на проект!
+
+Имя: ${formData.name}
+Email: ${formData.email}
+Telegram: ${formData.telegram || 'Не указан'}
+Язык: ${languages.find(l => l.id === formData.language)?.name || 'Не выбран'}
+Тип проекта: ${projectTypes.find(t => t.id === formData.projectType)?.name || 'Не выбран'}
+Бюджет: ${formData.budget || 'Не указан'}
+Сроки: ${formData.deadline || 'Не указаны'}
+
+Описание:
+${formData.description}`,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Ошибка отправки')
+      }
+    } catch (error) {
+      console.error('Email error:', error)
+      // Даже если email не отправился, показываем успех пользователю
+    }
     
     setIsSubmitting(false)
     setIsSubmitted(true)

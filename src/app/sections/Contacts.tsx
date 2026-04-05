@@ -147,7 +147,7 @@ export default function Contacts() {
                 Отправить <span className="gradient-text">сообщение</span>
               </h3>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-6 mb-6">
                 <div>
                   <input
                     type="text"
@@ -155,7 +155,7 @@ export default function Contacts() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
+                    className="w-full px-5 py-4 h-14 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors text-lg"
                   />
                 </div>
                 <div>
@@ -165,17 +165,17 @@ export default function Contacts() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
+                    className="w-full px-5 py-4 h-14 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors text-lg"
                   />
                 </div>
                 <div>
                   <textarea
                     placeholder="Ваше сообщение..."
                     required
-                    rows={5}
+                    rows={6}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors resize-none"
+                    className="w-full px-5 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors resize-none text-lg"
                   />
                 </div>
               </div>
