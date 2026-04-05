@@ -38,7 +38,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Обо <span className="gradient-text">мне</span>
@@ -82,7 +82,7 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="p-6 bg-666-gray/50 rounded-xl border border-666-red/20 glow-card"
+                  className="p-8 bg-666-gray/50 rounded-xl border border-666-red/20 glow-card"
                 >
                   <stat.icon className="w-8 h-8 text-666-red mb-3" />
                   <div className="text-3xl font-bold gradient-text">{stat.value}</div>
