@@ -33,6 +33,34 @@ const allTestimonials = [
     content: 'API на Java с микросервисной архитектурой работает безупречно. Отличная документация и поддержка.',
     rating: 5,
   },
+  {
+    id: 5,
+    name: 'Иван П.',
+    role: 'Founder, CryptoExchange',
+    content: 'Торговый бот на C++ обрабатывает тысячи транзакций в секунду. Профессионализм на высшем уровне!',
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: 'Наталья К.',
+    role: 'Head of IT, LogiTech',
+    content: 'Система обработки данных на Python справляется с нагрузкой в 10 раз лучше предыдущего решения.',
+    rating: 5,
+  },
+  {
+    id: 7,
+    name: 'Сергей В.',
+    role: 'Director, MedSoft',
+    content: 'iOS-приложение для клиники вышло в топ-10 медицинских приложений. Спасибо за отличную работу!',
+    rating: 5,
+  },
+  {
+    id: 8,
+    name: 'Ольга Д.',
+    role: 'CTO, EduPlatform',
+    content: 'Образовательная платформа на .NET обслуживает миллионы пользователей без единого сбоя.',
+    rating: 5,
+  },
 ]
 
 export default function Testimonials() {
@@ -101,8 +129,9 @@ export default function Testimonials() {
 
         <div className="flex items-center justify-center gap-4">
           <button
+            type="button"
             onClick={goToPrev}
-            className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center"
+            className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center z-10"
             style={{ 
               background: 'rgba(255, 0, 64, 0.15)', 
               border: '2px solid rgba(255, 0, 64, 0.6)', 
@@ -148,8 +177,9 @@ export default function Testimonials() {
           </div>
 
           <button
+            type="button"
             onClick={goToNext}
-            className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center"
+            className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center z-10"
             style={{ 
               background: 'rgba(255, 0, 64, 0.15)', 
               border: '2px solid rgba(255, 0, 64, 0.6)', 
