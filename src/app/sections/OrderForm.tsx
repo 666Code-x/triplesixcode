@@ -139,7 +139,7 @@ export default function OrderForm() {
                 required
                 value={formData.name}
                 onChange={(e) => handleChange('name', e.target.value)}
-                className="w-full px-5 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
+                className="w-full px-6 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
                 placeholder="Иван Иванов"
               />
             </div>
@@ -150,7 +150,7 @@ export default function OrderForm() {
                 required
                 value={formData.email}
                 onChange={(e) => handleChange('email', e.target.value)}
-                className="w-full px-5 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
+                className="w-full px-6 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
                 placeholder="ivan@example.com"
               />
             </div>
@@ -162,7 +162,7 @@ export default function OrderForm() {
               type="text"
               value={formData.telegram}
               onChange={(e) => handleChange('telegram', e.target.value)}
-              className="w-full px-5 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
+              className="w-full px-6 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors"
               placeholder="@username"
             />
           </div>
@@ -253,7 +253,7 @@ export default function OrderForm() {
               rows={6}
               value={formData.description}
               onChange={(e) => handleChange('description', e.target.value)}
-              className="w-full px-5 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors resize-none"
+              className="w-full px-6 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors resize-none"
               placeholder="Опишите требования, функционал, особенности проекта..."
             />
           </div>
@@ -267,7 +267,7 @@ export default function OrderForm() {
               <select
                 value={formData.budget}
                 onChange={(e) => handleChange('budget', e.target.value)}
-                className="w-full px-5 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg focus:outline-none focus:border-666-red/50 transition-colors"
+                className="w-full px-6 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg focus:outline-none focus:border-666-red/50 transition-colors"
               >
                 <option value="">Выберите бюджет</option>
                 <option value="und1000">До $1,000</option>
@@ -285,7 +285,7 @@ export default function OrderForm() {
               <select
                 value={formData.deadline}
                 onChange={(e) => handleChange('deadline', e.target.value)}
-                className="w-full px-5 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg focus:outline-none focus:border-666-red/50 transition-colors"
+                className="w-full px-6 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white text-lg focus:outline-none focus:border-666-red/50 transition-colors"
               >
                 <option value="">Выберите срок</option>
                 <option value="1-2weeks">1-2 недели</option>
