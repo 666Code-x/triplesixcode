@@ -62,7 +62,7 @@ export default function Contacts() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="p-6 bg-666-gray/30 rounded-xl border border-666-red/10 text-center glow-card"
+              className="p-6 py-10 bg-666-gray/30 rounded-xl border border-666-red/10 text-center glow-card"
             >
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                 {hasAnimated ? (
