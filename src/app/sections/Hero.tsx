@@ -87,17 +87,17 @@ export default function Hero() {
           >
             <motion.a
               href="#order"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-[#ff0040] hover:bg-[#ff0040]/90 text-white font-semibold rounded-lg text-center shadow-[0_0_20px_rgba(255,0,64,0.5)] transition-all"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#ff0040] hover:bg-[#d90036] text-white font-semibold rounded-lg whitespace-nowrap transition-all shadow-[0_0_20px_rgba(255,0,64,0.4)]"
             >
               Оставить заявку
             </motion.a>
             <motion.a
               href="#projects"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border border-[#ff0040]/50 hover:border-[#ff0040] text-[#ff0040] hover:bg-[#ff0040]/10 font-semibold rounded-lg transition-all text-center"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#ff0040] text-[#ff0040] hover:bg-[#ff0040] hover:text-white font-semibold rounded-lg whitespace-nowrap transition-all"
             >
               Посмотреть проекты
             </motion.a>
