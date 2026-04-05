@@ -72,7 +72,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Услуги <span className="gradient-text">666.CODE</span>
@@ -94,23 +94,23 @@ export default function Services() {
               whileHover={{ y: -10 }}
               className="group relative"
             >
-              <div className="h-full p-6 rounded-xl glow-card overflow-hidden">
+              <div className="h-full p-8 rounded-2xl glow-card overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-666-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="relative z-10">
                   <motion.div
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                     transition={{ duration: 0.5 }}
-                    className="w-14 h-14 mb-4 rounded-lg bg-666-red/20 flex items-center justify-center"
+                    className="w-16 h-16 mb-5 rounded-xl bg-666-red/20 flex items-center justify-center"
                   >
-                    <service.icon className="w-7 h-7 text-666-red" />
+                    <service.icon className="w-8 h-8 text-666-red" />
                   </motion.div>
 
-                  <h3 className="text-lg font-bold mb-2 text-white group-hover:text-666-red transition-colors">
+                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-666-red transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+                  <p className="text-base text-gray-400 mb-5 leading-relaxed">
                     {service.description}
                   </p>
 
@@ -118,7 +118,7 @@ export default function Services() {
                     {service.techs.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1 px-2 py-1 text-xs text-gray-400 border border-666-red/10 rounded bg-666-black/30"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 text-sm text-gray-400 border border-666-red/10 rounded bg-666-black/30"
                       >
                         {tech}
                       </span>
