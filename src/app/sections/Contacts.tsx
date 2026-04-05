@@ -155,7 +155,7 @@ export default function Contacts() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-5 py-4 h-14 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors text-lg"
+                    className="w-full px-8 py-4 h-14 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors text-lg"
                   />
                 </div>
                 <div>
@@ -165,7 +165,7 @@ export default function Contacts() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-5 py-4 h-14 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors text-lg"
+                    className="w-full px-8 py-4 h-14 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors text-lg"
                   />
                 </div>
                 <div>
@@ -175,7 +175,7 @@ export default function Contacts() {
                     rows={6}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-5 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors resize-none text-lg"
+                    className="w-full px-8 py-4 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors resize-none text-lg"
                   />
                 </div>
               </div>
