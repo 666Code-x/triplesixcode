@@ -80,8 +80,8 @@ export default function OrderForm() {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
     return (
-      <section id="order" className="relative py-40 px-4">
-        <div className="max-w-2xl mx-auto text-center">
+      <section id="order" className="relative py-32 px-4 overflow-hidden">
+        <div className="max-w-2xl mx-auto text-center min-h-[400px] flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
