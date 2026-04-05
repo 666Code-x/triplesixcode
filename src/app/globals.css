@@ -285,6 +285,27 @@ section {
   gap: 3rem;
 }
 
+/* Padding fallbacks */
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 /* Flex fallbacks */
 .flex {
   display: flex;
