@@ -46,6 +46,21 @@ const projects = [
   },
 ]
 
+const techLogos: Record<string, string> = {
+  'C++': '/logos/cpp.svg',
+  'C#': '/logos/csharp.svg',
+  'Python': '/logos/python.svg',
+  'Java': '/logos/java.svg',
+  'Go': '/logos/go.svg',
+  'Swift': '/logos/swift.svg',
+  '.NET': '/logos/Microsoft_.NET_logo.svg',
+  'PostgreSQL': '/logos/Postgresql_elephant.svg',
+  'MongoDB': '/logos/MongoDB_Logo.svg',
+  'Kafka': '/logos/Apache_Kafka_logo.svg',
+  'ClickHouse': '/logos/clickhouse-yellow-badge.svg',
+  'Spring': '/logos/Spring_Boot.svg',
+}
+
 const techColors: Record<string, string> = {
   'C++': '#00599C',
   'C#': '#239120',
@@ -132,13 +147,16 @@ export default function Projects() {
                       {project.techs.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 text-sm rounded-full border"
+                          className="px-3 py-1 text-sm rounded-full border flex items-center gap-2"
                           style={{
                             borderColor: `${techColors[tech] || '#ff0040'}40`,
                             backgroundColor: `${techColors[tech] || '#ff0040'}15`,
                             color: techColors[tech] || '#ff0040',
                           }}
                         >
+                          {techLogos[tech] && (
+                            <img src={techLogos[tech]} alt={tech} className="w-4 h-4 object-contain" />
+                          )}
                           {tech}
                         </span>
                       ))}
@@ -192,12 +210,15 @@ export default function Projects() {
                     {project.techs.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1.5 text-sm rounded-md"
+                        className="px-3 py-1.5 text-sm rounded-md flex items-center gap-2"
                         style={{
                           backgroundColor: `${techColors[tech] || '#ff0040'}20`,
                           color: techColors[tech] || '#ff0040',
                         }}
                       >
+                        {techLogos[tech] && (
+                          <img src={techLogos[tech]} alt={tech} className="w-4 h-4 object-contain" />
+                        )}
                         {tech}
                       </span>
                     ))}
