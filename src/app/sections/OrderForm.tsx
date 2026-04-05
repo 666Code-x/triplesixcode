@@ -75,8 +75,12 @@ export default function OrderForm() {
   }
 
   if (isSubmitted) {
+    // Scroll to top of success message section
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
     return (
-      <section id="order" className="relative py-32 px-4">
+      <section id="order" className="relative py-40 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
