@@ -82,7 +82,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Избранные <span className="gradient-text">проекты</span>
@@ -157,7 +157,7 @@ export default function Projects() {
             ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-5">
           {projects
             .filter((p) => !p.featured)
             .map((project, index) => (
@@ -170,37 +170,37 @@ export default function Projects() {
                 whileHover={{ y: -5 }}
                 className="group"
               >
-                <div className="h-full p-6 rounded-xl glow-card">
-                  <div className="flex items-center justify-between mb-3">
-                    <FolderGit2 className="w-8 h-8 text-666-red/70" />
-                    <div className="flex gap-2">
+                <div className="h-full p-7 rounded-2xl glow-card">
+                  <div className="flex items-center justify-between mb-4">
+                    <FolderGit2 className="w-9 h-9 text-666-red/70" />
+                    <div className="flex gap-3">
                       <a
                         href={project.github}
                         className="text-gray-500 hover:text-666-red transition-colors"
                       >
-                        <Github className="w-5 h-5" />
+                        <Github className="w-6 h-6" />
                       </a>
                       <a
                         href={project.demo}
                         className="text-gray-500 hover:text-666-red transition-colors"
                       >
-                        <ExternalLink className="w-5 h-5" />
+                        <ExternalLink className="w-6 h-6" />
                       </a>
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold mb-2 group-hover:text-666-red transition-colors">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-666-red transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-400 mb-4 line-clamp-2">
+                  <p className="text-base text-gray-400 mb-5 leading-relaxed">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-2">
                     {project.techs.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 text-xs rounded"
+                        className="px-3 py-1.5 text-sm rounded-md"
                         style={{
                           backgroundColor: `${techColors[tech] || '#ff0040'}20`,
                           color: techColors[tech] || '#ff0040',
