@@ -55,7 +55,7 @@ export default function About() {
           >
             <div className="space-y-6 text-gray-300 leading-relaxed">
               <p className="text-lg">
-                Привет! Я — разработчик с более чем 5-летним опытом создания
+                Привет! Я — разработчик с более чем 7-летним опытом создания
                 высоконагруженных приложений и систем различной сложности.
               </p>
               <p>
@@ -73,7 +73,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-2 gap-6 mt-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -82,11 +82,11 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="p-4 bg-666-gray/50 rounded-lg border border-666-red/20 glow-card"
+                  className="p-6 bg-666-gray/50 rounded-xl border border-666-red/20 glow-card"
                 >
-                  <stat.icon className="w-6 h-6 text-666-red mb-2" />
-                  <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+                  <stat.icon className="w-8 h-8 text-666-red mb-3" />
+                  <div className="text-3xl font-bold gradient-text">{stat.value}</div>
+                  <div className="text-base text-gray-400">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -99,12 +99,12 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative bg-666-gray/50 rounded-2xl p-8 border border-666-red/20 glow-card">
-              <h3 className="text-xl font-bold mb-6 text-center">
+            <div className="relative bg-666-gray/50 rounded-2xl p-10 border border-666-red/20 glow-card">
+              <h3 className="text-2xl font-bold mb-8 text-center">
                 Технический <span className="gradient-text">стек</span>
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {[
                   { name: 'C++', level: 95, color: '#00599C' },
                   { name: 'C#', level: 90, color: '#239120' },
@@ -120,13 +120,13 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium" style={{ color: skill.color }}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-base font-medium" style={{ color: skill.color }}>
                         {skill.name}
                       </span>
-                      <span className="text-sm text-gray-400">{skill.level}%</span>
+                      <span className="text-base text-gray-400">{skill.level}%</span>
                     </div>
-                    <div className="h-2 bg-666-black rounded-full overflow-hidden">
+                    <div className="h-3 bg-666-black rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}

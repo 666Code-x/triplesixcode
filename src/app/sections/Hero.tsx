@@ -111,11 +111,11 @@ export default function Hero() {
           className="relative"
         >
           <div className="bg-[#1a1a25] rounded-xl overflow-hidden border border-[#ff0040]/20 shadow-[0_0_30px_rgba(255,0,64,0.15)]">
-            <div className="bg-[#0a0a0f]/80 px-6 py-4 flex items-center gap-3 border-b border-[#ff0040]/10">
+            <div className="bg-[#0a0a0f]/80 px-8 py-4 flex items-center gap-3 border-b border-[#ff0040]/10">
               <div className="w-3 h-3 rounded-full bg-red-500" />
               <div className="w-3 h-3 rounded-full bg-yellow-500" />
               <div className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="ml-4 text-sm text-gray-500 font-mono">dev.ts</span>
+              <span className="ml-6 text-sm text-gray-500 font-mono">dev.ts</span>
             </div>
 
             <div className="p-8 font-mono text-base bg-[#0a0a0f]/50">
