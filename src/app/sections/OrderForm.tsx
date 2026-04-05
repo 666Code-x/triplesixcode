@@ -169,7 +169,7 @@ export default function OrderForm() {
 
           <div className="mb-6">
             <label className="block text-sm text-gray-400 mb-3">Язык программирования</label>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               {languages.map((lang) => {
                 const isSelected = formData.language === lang.id
                 return (
@@ -179,15 +179,15 @@ export default function OrderForm() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleChange('language', lang.id)}
-                    className="px-6 py-4 rounded-xl border transition-all flex items-center gap-4 min-w-[140px]"
+                    className="px-5 py-3 rounded-xl border transition-all flex items-center gap-3 min-w-[120px]"
                     style={{
                       background: isSelected ? 'rgba(255, 0, 64, 0.2)' : 'rgba(10, 10, 15, 0.5)',
                       borderColor: isSelected ? '#ff0040' : 'rgba(255, 0, 64, 0.2)',
                       color: isSelected ? '#ff0040' : '#9ca3af'
                     }}
                   >
-                    <img src={`/logos/${lang.id === 'csharp' ? 'csharp' : lang.id}.svg`} alt={lang.name} className="w-8 h-8" />
-                    <span className="text-lg font-semibold">{lang.name}</span>
+                    <img src={`/logos/${lang.id === 'csharp' ? 'csharp' : lang.id}.svg`} alt={lang.name} className="w-7 h-7" />
+                    <span className="font-semibold">{lang.name}</span>
                   </motion.button>
                 )
               })}
@@ -196,7 +196,7 @@ export default function OrderForm() {
 
           <div className="mb-6">
             <label className="block text-sm text-gray-400 mb-3">Тип проекта</label>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3">
               {projectTypes.map((type) => {
                 const isSelected = formData.projectType === type.id
                 return (
@@ -206,17 +206,15 @@ export default function OrderForm() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleChange('projectType', type.id)}
-                    className="px-3 py-2 rounded-lg border transition-all flex flex-col items-center justify-center text-center"
+                    className="px-5 py-3 rounded-xl border transition-all flex items-center gap-3 min-w-[120px]"
                     style={{
                       background: isSelected ? 'rgba(255, 0, 64, 0.2)' : 'rgba(10, 10, 15, 0.5)',
                       borderColor: isSelected ? '#ff0040' : 'rgba(255, 0, 64, 0.2)',
-                      color: isSelected ? '#ff0040' : '#9ca3af',
-                      width: '7rem',
-                      height: '4rem'
+                      color: isSelected ? '#ff0040' : '#9ca3af'
                     }}
                   >
-                    <span className="text-lg">{type.icon}</span>
-                    <span className="text-xs leading-tight mt-1">{type.name}</span>
+                    <span className="text-xl">{type.icon}</span>
+                    <span className="font-semibold">{type.name}</span>
                   </motion.button>
                 )
               })}
