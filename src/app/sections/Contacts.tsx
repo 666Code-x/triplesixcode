@@ -147,7 +147,7 @@ export default function Contacts() {
                 Отправить <span className="gradient-text">сообщение</span>
               </h3>
 
-              <div className="space-y-10 mb-6">
+              <div className="mb-6">
                 <div>
                   <input
                     type="text"
@@ -158,7 +158,7 @@ export default function Contacts() {
                     className="w-full px-8 py-4 h-14 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors text-lg"
                   />
                 </div>
-                <div>
+                <div style={{ marginTop: '48px' }}>
                   <input
                     type="email"
                     placeholder="Ваш email"
@@ -168,7 +168,7 @@ export default function Contacts() {
                     className="w-full px-8 py-4 h-14 bg-666-black/50 border border-666-red/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-666-red/50 transition-colors text-lg"
                   />
                 </div>
-                <div>
+                <div style={{ marginTop: '48px' }}>
                   <textarea
                     placeholder="Ваше сообщение..."
                     required
