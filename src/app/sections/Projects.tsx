@@ -37,14 +37,6 @@ const projects = [
     featured: false,
   },
   {
-    title: 'Gamesense Helper',
-    description: 'Легкий игровой помощник с поддержкой кастомных скриптов и рендерингом на OpenGL.',
-    techs: ['C++', 'OpenGL', 'Lua'],
-    github: '#',
-    demo: '#',
-    featured: false,
-  },
-  {
     title: 'E-commerce API',
     description: 'REST и GraphQL API для крупной e-commerce платформы.',
     techs: ['Java', 'Spring', 'MongoDB'],
