@@ -75,10 +75,6 @@ export default function OrderForm() {
   }
 
   if (isSubmitted) {
-    // Scroll to top of success message section
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
     return (
       <section id="order" className="relative py-32 px-4 overflow-hidden">
         <div className="max-w-2xl mx-auto text-center min-h-[400px] flex items-center justify-center">
