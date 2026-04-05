@@ -110,16 +110,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="relative"
         >
-          <div className="bg-[#1a1a25] rounded-lg overflow-hidden border border-[#ff0040]/20 shadow-[0_0_30px_rgba(255,0,64,0.15)]">
-            <div className="bg-[#0a0a0f]/80 px-4 py-3 flex items-center gap-2 border-b border-[#ff0040]/10">
+          <div className="bg-[#1a1a25] rounded-xl overflow-hidden border border-[#ff0040]/20 shadow-[0_0_30px_rgba(255,0,64,0.15)]">
+            <div className="bg-[#0a0a0f]/80 px-6 py-4 flex items-center gap-3 border-b border-[#ff0040]/10">
               <div className="w-3 h-3 rounded-full bg-red-500" />
               <div className="w-3 h-3 rounded-full bg-yellow-500" />
               <div className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="ml-4 text-sm text-gray-500">dev.ts</span>
+              <span className="ml-4 text-sm text-gray-500 font-mono">dev.ts</span>
             </div>
 
-            <div className="p-6 font-mono text-sm bg-[#0a0a0f]/50">
-              <pre className="text-gray-300 whitespace-pre-wrap" style={{ minHeight: '160px' }}>
+            <div className="p-8 font-mono text-base bg-[#0a0a0f]/50">
+              <pre className="text-gray-300 whitespace-pre-wrap" style={{ minHeight: '220px' }}>
                 {typedText}
                 <span className="animate-pulse">|</span>
               </pre>
