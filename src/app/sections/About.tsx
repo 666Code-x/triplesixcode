@@ -120,25 +120,27 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="flex justify-between mb-2">
-                      <span className="text-base font-medium flex items-center gap-2" style={{ color: skill.color }}>
-                        <img src={skill.icon} alt={skill.name} className="w-5 h-5" />
+                    <div className="flex justify-between mb-1">
+                      <span className="text-base font-medium" style={{ color: skill.color }}>
                         {skill.name}
                       </span>
                       <span className="text-base text-gray-400">{skill.level}%</span>
                     </div>
-                    <div className="h-3 bg-666-black rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-                        className="h-full rounded-full"
-                        style={{
-                          background: `linear-gradient(90deg, ${skill.color}, ${skill.color}80)`,
-                          boxShadow: `0 0 10px ${skill.color}50`,
-                        }}
-                      />
+                    <div className="flex items-center gap-3">
+                      <img src={skill.icon} alt={skill.name} className="w-5 h-5 flex-shrink-0" />
+                      <div className="h-3 bg-666-black rounded-full overflow-hidden flex-1">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                          className="h-full rounded-full"
+                          style={{
+                            background: `linear-gradient(90deg, ${skill.color}, ${skill.color}80)`,
+                            boxShadow: `0 0 10px ${skill.color}50`,
+                          }}
+                        />
+                      </div>
                     </div>
                   </motion.div>
                 ))}
