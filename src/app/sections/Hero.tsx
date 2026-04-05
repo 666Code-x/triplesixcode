@@ -89,7 +89,7 @@ export default function Hero() {
               href="#order"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-666-red hover:bg-666-red/90 text-white font-semibold rounded-lg glow-red text-center"
+              className="px-8 py-4 bg-[#ff0040] hover:bg-[#ff0040]/90 text-white font-semibold rounded-lg text-center shadow-[0_0_20px_rgba(255,0,64,0.5)] transition-all"
             >
               Оставить заявку
             </motion.a>
@@ -97,7 +97,7 @@ export default function Hero() {
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border border-666-red/50 hover:border-666-red text-666-red hover:bg-666-red/10 font-semibold rounded-lg transition-all text-center"
+              className="px-8 py-4 border border-[#ff0040]/50 hover:border-[#ff0040] text-[#ff0040] hover:bg-[#ff0040]/10 font-semibold rounded-lg transition-all text-center"
             >
               Посмотреть проекты
             </motion.a>
@@ -110,23 +110,24 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="relative"
         >
-          <div className="bg-666-gray rounded-lg overflow-hidden glow-card">
-            <div className="bg-666-black/50 px-4 py-3 flex items-center space-x-2">
+          <div className="bg-[#1a1a25] rounded-lg overflow-hidden border border-[#ff0040]/20 shadow-[0_0_30px_rgba(255,0,64,0.15)]">
+            <div className="bg-[#0a0a0f]/80 px-4 py-3 flex items-center gap-2 border-b border-[#ff0040]/10">
               <div className="w-3 h-3 rounded-full bg-red-500" />
               <div className="w-3 h-3 rounded-full bg-yellow-500" />
               <div className="w-3 h-3 rounded-full bg-green-500" />
-              <span className="ml-4 text-sm text-gray-400">dev.ts</span>
+              <span className="ml-4 text-sm text-gray-500">dev.ts</span>
             </div>
 
-            <div className="p-6 font-mono text-sm">
-              <pre className="text-gray-300 whitespace-pre-wrap typing-cursor">
+            <div className="p-6 font-mono text-sm bg-[#0a0a0f]/50">
+              <pre className="text-gray-300 whitespace-pre-wrap" style={{ minHeight: '160px' }}>
                 {typedText}
+                <span className="animate-pulse">|</span>
               </pre>
             </div>
           </div>
 
-          <div className="absolute -top-4 -right-4 bg-666-red/20 backdrop-blur-sm px-4 py-2 rounded-lg border border-666-red/30">
-            <span className="text-666-red text-xs font-mono">{'<code />'}</span>
+          <div className="absolute -top-4 -right-4 bg-[#ff0040]/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-[#ff0040]/30">
+            <span className="text-[#ff0040] text-xs font-mono">{'<code />'}</span>
           </div>
         </motion.div>
       </div>

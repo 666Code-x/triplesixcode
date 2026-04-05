@@ -66,7 +66,7 @@ export default function Navigation() {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false)
-    const element = document.querySelector(href)
+    const element = document.querySelector(href) as Element | null
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
@@ -92,7 +92,7 @@ export default function Navigation() {
             className="flex items-center gap-2"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={(e) => {
+            onClick={(e: React.MouseEvent) => {
               e.preventDefault()
               handleNavClick('#hero')
             }}
@@ -103,7 +103,7 @@ export default function Navigation() {
             </span>
           </motion.a>
 
-          <div className="hidden md:flex items-center gap-1 relative">
+          <div className="hidden md:flex items-center gap-6 relative">
             <motion.div
               className="absolute h-8 bg-666-red/15 border border-666-red/30 rounded-lg"
               animate={{
@@ -115,9 +115,9 @@ export default function Navigation() {
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}
-                ref={(el) => { navRefs.current[index] = el }}
+                ref={(el: HTMLAnchorElement | null) => { navRefs.current[index] = el }}
                 href={item.href}
-                onClick={(e) => {
+                onClick={(e: React.MouseEvent) => {
                   e.preventDefault()
                   handleNavClick(item.href)
                 }}
