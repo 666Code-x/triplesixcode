@@ -147,7 +147,7 @@ export default function Contacts() {
                 Отправить <span className="gradient-text">сообщение</span>
               </h3>
 
-              <div className="space-y-6 mb-6">
+              <div className="space-y-8 mb-6">
                 <div>
                   <input
                     type="text"
