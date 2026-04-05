@@ -367,6 +367,11 @@ section {
   min-width: 160px;
 }
 
+/* Filter fallbacks */
+.invert {
+  filter: invert(1);
+}
+
 /* Margin fallbacks */
 .mb-2 {
   margin-bottom: 0.5rem;

@@ -73,7 +73,7 @@ const techColors: Record<string, string> = {
   'MongoDB': '#47A248',
   'WebSocket': '#FF6600',
   'CoreData': '#FF9500',
-  'Kafka': '#231F20',
+  'Kafka': '#FFFFFF',
   'ClickHouse': '#FFCC00',
   'OpenGL': '#5586A4',
   'Lua': '#000080',
@@ -155,7 +155,11 @@ export default function Projects() {
                           }}
                         >
                           {techLogos[tech] && (
-                            <img src={techLogos[tech]} alt={tech} className="w-4 h-4 object-contain" />
+                            <img 
+                              src={techLogos[tech]} 
+                              alt={tech} 
+                              className={`w-4 h-4 object-contain ${tech === 'Kafka' ? 'invert' : ''}`} 
+                            />
                           )}
                           {tech}
                         </span>
@@ -217,7 +221,11 @@ export default function Projects() {
                         }}
                       >
                         {techLogos[tech] && (
-                          <img src={techLogos[tech]} alt={tech} className="w-4 h-4 object-contain" />
+                          <img 
+                            src={techLogos[tech]} 
+                            alt={tech} 
+                            className={`w-4 h-4 object-contain ${tech === 'Kafka' ? 'invert' : ''}`} 
+                          />
                         )}
                         {tech}
                       </span>
