@@ -106,12 +106,12 @@ export default function About() {
 
               <div className="space-y-5">
                 {[
-                  { name: 'C++', level: 95, color: '#00599C' },
-                  { name: 'C#', level: 90, color: '#239120' },
-                  { name: 'Python', level: 88, color: '#3776AB' },
-                  { name: 'Java', level: 85, color: '#007396' },
-                  { name: 'Go', level: 80, color: '#00ADD8' },
-                  { name: 'Swift', level: 75, color: '#FFAC45' },
+                  { name: 'C++', level: 95, color: '#00599C', icon: '/logos/cpp.svg' },
+                  { name: 'C#', level: 90, color: '#239120', icon: '/logos/csharp.svg' },
+                  { name: 'Python', level: 88, color: '#3776AB', icon: '/logos/python.svg' },
+                  { name: 'Java', level: 85, color: '#007396', icon: '/logos/java.svg' },
+                  { name: 'Go', level: 80, color: '#00ADD8', icon: '/logos/go.svg' },
+                  { name: 'Swift', level: 75, color: '#FFAC45', icon: '/logos/swift.svg' },
                 ].map((skill, index) => (
                   <motion.div
                     key={skill.name}
@@ -121,7 +121,8 @@ export default function About() {
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className="flex justify-between mb-2">
-                      <span className="text-base font-medium" style={{ color: skill.color }}>
+                      <span className="text-base font-medium flex items-center gap-2" style={{ color: skill.color }}>
+                        <img src={skill.icon} alt={skill.name} className="w-5 h-5" />
                         {skill.name}
                       </span>
                       <span className="text-base text-gray-400">{skill.level}%</span>
