@@ -362,6 +362,11 @@ section {
   width: 2rem;
 }
 
+/* Min-width fallbacks */
+.min-w-\[140px\] {
+  min-width: 140px;
+}
+
 /* Margin fallbacks */
 .mb-2 {
   margin-bottom: 0.5rem;

@@ -169,7 +169,7 @@ export default function OrderForm() {
 
           <div className="mb-6">
             <label className="block text-sm text-gray-400 mb-3">Язык программирования</label>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
               {languages.map((lang) => {
                 const isSelected = formData.language === lang.id
                 return (
@@ -179,15 +179,15 @@ export default function OrderForm() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleChange('language', lang.id)}
-                    className="px-4 py-3 rounded-lg border transition-all flex items-center gap-3"
+                    className="px-6 py-4 rounded-xl border transition-all flex items-center gap-4 min-w-[140px]"
                     style={{
                       background: isSelected ? 'rgba(255, 0, 64, 0.2)' : 'rgba(10, 10, 15, 0.5)',
                       borderColor: isSelected ? '#ff0040' : 'rgba(255, 0, 64, 0.2)',
                       color: isSelected ? '#ff0040' : '#9ca3af'
                     }}
                   >
-                    {lang.icon}
-                    <span className="font-medium">{lang.name}</span>
+                    <img src={`/logos/${lang.id === 'csharp' ? 'csharp' : lang.id}.svg`} alt={lang.name} className="w-8 h-8" />
+                    <span className="text-lg font-semibold">{lang.name}</span>
                   </motion.button>
                 )
               })}
