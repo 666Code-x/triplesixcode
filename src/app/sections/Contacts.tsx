@@ -52,7 +52,7 @@ export default function Contacts() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+          className="grid grid-cols-2 gap-4 max-w-3xl mx-auto mb-16"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -80,7 +80,7 @@ export default function Contacts() {
           ))}
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-4 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
           {contacts.map((contact, index) => (
             <motion.a
               key={contact.label}
@@ -90,11 +90,11 @@ export default function Contacts() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="group p-6 bg-666-gray/30 rounded-xl border border-666-red/10 hover:border-666-red/30 transition-all glow-card"
+              className="group p-8 bg-666-gray/30 rounded-xl border border-666-red/10 hover:border-666-red/30 transition-all glow-card text-center"
             >
-              <contact.icon className="w-8 h-8 text-666-red mb-4 group-hover:scale-110 transition-transform" />
-              <div className="text-sm text-gray-500 mb-1">{contact.label}</div>
-              <div className="font-semibold text-white group-hover:text-666-red transition-colors">
+              <contact.icon className="w-10 h-10 text-666-red mb-4 group-hover:scale-110 transition-transform mx-auto" />
+              <div className="text-sm text-gray-500 mb-2">{contact.label}</div>
+              <div className="font-semibold text-white group-hover:text-666-red transition-colors text-lg">
                 {contact.value}
               </div>
             </motion.a>
