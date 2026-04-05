@@ -12,6 +12,24 @@ import {
   Layers
 } from 'lucide-react'
 
+const techLogos: Record<string, string> = {
+  'C++': '/logos/cpp.svg',
+  'C#': '/logos/csharp.svg',
+  'Python': '/logos/python.svg',
+  'Java': '/logos/java.svg',
+  'Go': '/logos/go.svg',
+  'Swift': '/logos/swift.svg',
+  'PostgreSQL': '/logos/Postgresql_elephant.svg',
+  'MongoDB': '/logos/MongoDB_Logo.svg',
+  'Redis': '/logos/redis-logo-svgrepo-com.svg',
+  'FastAPI': '/logos/FastAPI.svg',
+  'Spring': '/logos/Spring_Boot.svg',
+  'Bash': '/logos/Bash_Logo_Colored.svg',
+  'PowerShell': '/logos/Powershell_128.svg',
+  'C': '/logos/cpp.svg',
+  'Assembly': '/logos/assembly-svgrepo-com.svg',
+}
+
 const services = [
   {
     icon: Code2,
@@ -118,8 +136,11 @@ export default function Services() {
                     {service.techs.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1 px-3 py-1.5 text-sm text-gray-400 border border-666-red/10 rounded bg-666-black/30"
+                        className="inline-flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 border border-666-red/10 rounded bg-666-black/30"
                       >
+                        {techLogos[tech] && (
+                          <img src={techLogos[tech]} alt={tech} className="w-4 h-4 object-contain" />
+                        )}
                         {tech}
                       </span>
                     ))}
